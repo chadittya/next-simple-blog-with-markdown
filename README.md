@@ -1,4 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Blog with Markdown
+
+This is a [Next.js](https://nextjs.org) project that implements a simple blog using Markdown files for content. The project was bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Features
+
+- Display a list of blog posts on the home page
+- View individual blog posts
+- Markdown support for blog content
+- Automatic sorting of posts by date
+
+## Project Structure
+
+- `app/page.tsx`: The home page component that displays a list of blog posts
+- `app/posts/[id]/page.tsx`: The dynamic route for individual blog posts
+- `app/lib/post.ts`: Contains utility functions for fetching and processing blog post data
+- `app/posts/`: Directory containing Markdown files for blog posts
 
 ## Getting Started
 
@@ -16,9 +32,19 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding New Blog Posts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To add a new blog post, create a new Markdown file in the `app/posts/` directory. The file name should be in the format `{id}-{title}.md`. The content of the file should include frontmatter with the following fields:
+
+```markdown
+---
+title: "Your Blog Post Title"
+date: "YYYY-MM-DD"
+author: "Your Name"
+---
+
+Your blog post content goes here...
+```
 
 ## Learn More
 
